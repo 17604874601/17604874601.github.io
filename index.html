@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>辛明亮</title>
+		<link rel="stylesheet" type="text/css" href="css/demo.css">
+	</head>
+	<body>
+		<h1>详解&nbsp;CSS&nbsp;属性&nbsp;-&nbsp;伪类和伪元素的区别</h1>
+		
+		<span class="hui-b green-q">html</span>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="hui-b green-q">ccs</span>
+		
+		<br><br><br><br><br>
+		<p>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			之前写了一篇
+		<a href="#" title="">
+			<i>
+				&nbsp;&nbsp;&laquo详解CSS属性&nbsp;-&nbsp;:before&nbsp;&&&nbsp;:after&raquo 
+			</i>
+		</a>
+		
+				的博文，当时自己没分清楚伪元素和伪类，所以在文章内把<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 概念混淆了，庆幸&nbsp;@riophae兄弟指正了
+		我的错误，所以今天打算好好研究下两者的区别。首先，阅读
+		&nbsp;<span class="hui-b red-q">w3c</span>&nbsp;对<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 两者的定义：<br>
+		</p>
+		<ol>
+	    	<ul type="disc">	
+		 		<li>
+		 			&nbsp;<span class="hui-b red-q">ccs</span>&nbsp;
+		     		伪类用于向某些选择器添加特殊的效果。
+		 		</li><br>
+		 	
+		 		<li>
+		 			&nbsp;<span class="hui-b red-q">ccs</span>&nbsp;
+		     		伪元素用于向某些选择器添加到某些选择器。
+		 		</li>
+			</ul>
+		</ol>
+		<p>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			可以明确两点，第一两者都与选择器相关，第二就是添加一些“特殊的效果。这里特殊指的是两者描述了其他<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;css 无法描述的东西。
+		</p>
+		
+		<h2>&nbsp;&nbsp;&nbsp;&nbsp;伪类种类</h2>
+		<hr align="left" width="85%" size="1.5"/><br>
+
+	    <table border="1" cellspacing="0" align="center">	
+	    	<tr width="300" >
+	            <th>伪类</th>	
+	            <th>作用</th>
+	        </tr>
+				
+	        <tr height="30">
+	            <td>:active</td>
+	            <td>将样式添加到被激活的元素</td>
+	        </tr>
+			<tr height="30">
+				<td>:focus</td>
+				<td>将样式添加到被选中的元素</td>
+			</tr>
+				
+			<tr height="30">
+				<td>:hover</td>
+				<td>当鼠标悬浮在元素上方时，向元素添加样式</td>
+			</tr>
+				
+			<tr height="30">
+				    <td>:link</td>
+				    <td>将特殊的样式添加到未被访问过的链接</td>
+			</tr>
+				
+			<tr height="30">
+				<td>:visited</td>
+				<td>将特殊的样式添加到被访问过的链接</td>
+			</tr>
+				
+			<tr height="30">
+				<td>:first-child</td>
+				<td>将特殊的样式添加到元素的第一个子元素</td>
+			</tr>
+				
+			<tr height="30">
+				<td>:lang</td>
+				<td>允许创作者来定义指定的元素中使用的元素</td>
+			</tr>
+	    </table>
+			
+		<h2>&nbsp;&nbsp;&nbsp;&nbsp;伪元素种类</h2>
+			
+		<hr align="left" width="85%" size="1.5"/><br>
+		<div>	
+			<table border="1" cellspacing="0" align="center">	
+				<tr width="300">
+			    	<th>伪元素</th>	
+			    	<th>作用</th>
+				</tr>			
+				<tr height="30">
+			    	<td>:first-letter</td>
+			        <td>将特殊的样式添加到文本的首字母</td>
+				</tr>
+				<tr height="30">
+					<td>:first-line</td>
+					<td>将特殊的样式添加到文本的首行</td>
+				</tr>
+							
+				<tr height="30">
+					<td>:before</td>
+					<td>在元素之前插入某些内容</td>
+				</tr>
+							
+				<tr height="30">
+					<td>:after</td>
+					<td>在元素之后插入某些内容</td>
+				</tr>
+			</table>
+		</div>	        
+		<h2>&nbsp;&nbsp;&nbsp;&nbsp;区别</h2>
+				    
+		<hr align="left" width="85%" size="1.5"/>
+				    
+		<br>
+				    
+		<p>
+			&nbsp;&nbsp;&nbsp;&nbsp;这里用伪类&nbsp;:<span class="hui-b red-q">first-child</span>&nbsp;
+			和伪元素&nbsp;:<span class="hui-b red-q">first-letter</span>&nbsp;来比较。
+		</p>
+				    	
+		<pre class="hui-b">
+	p&gt;i:first-child{color：red}
+	&lt;p&gt;&lt;i&gt;first&lt;/i&gt;&lt;i&gt;second&lt;/i&gt;&lt;/p&gt;</pre>
+				    
+		<p align="center">
+			<i class="red-q">first</i>
+			&nbsp;&nbsp;
+			<span>second</span>
+		</p>
+					
+		<p>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			伪类:first-child添加样式到第一个元素
+		</p>
+					
+		<p>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			如果我们不使用伪类，而希望达到上述效果，可以这样做
+		</p>
+		<pre class="hui-b">
+	    	:first-child{color：red}
+			&lt;p&gt;
+		   	&lt;i&gt;first&lt;/i&gt;
+		  	&lt;i&gt;second&lt;/i&gt;
+			&lt;/p&gt;
+		</pre>
+		<p>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			即我们给第一个元素添加一个类，然后定义这个类的样式。那么我们接着看看看为元素：
+		</p>
+		<pre class="hui-b">
+			p:first-child{color：red}
+			&lt;p&gt;I am stephen lee.&lt;p&gt;
+	 	</pre>
+	 	
+	    <p>&nbsp;&nbsp;&nbsp;&nbsp;//伪元素:firstletter添加样式到第一个字母</p>
+	    <p>&nbsp;&nbsp;&nbsp;&nbsp;那么如果我们不使用伪元素，要达到上述效果，应该怎么做呢？</p>
+	
+		<pre class="hui-b">
+			:first-child{color：red}
+			&lt;p&gt;&lt;span class="first-letter"&gt;I&lt;/span&gt;&lt;p&gt;
+	    </pre>
+	    
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;即我们给第一个字母添加一个span，然后给span怎加样式。</p>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;两者的区别已经出来了。那就是：</p>
+		
+		<pre class="hui-b">
+	
+			伪类的效果可以通过添加一个实际的类来达到，而伪元素的效果则需要通过添加一个实际的元素才能达到，这
+	
+			也是为什么他们一个称为伪类，一个称为伪元素的原因。
+	 	</pre>
+	 	
+	    <h2>&nbsp;&nbsp;&nbsp;&nbsp;总结</h2>
+	 	<p>
+	 		&nbsp;&nbsp;&nbsp;&nbsp;
+	 		伪元素和伪类之所以这么容易混淆，是因为他们的效果类似而且写法相似，但实际上css3为了区分两者，已经明<br>
+	 		&nbsp;&nbsp;&nbsp;&nbsp;
+	 		确规定了伪类用一个冒号来表示。
+	 	</p>
+	 	
+		<pre class="hui-b">
+   			:Pseudo-classes
+   			:Pseudo-elements
+	 	</pre>
+	    <p>&nbsp;&nbsp;&nbsp;&nbsp;但因为兼容性的问题，所...</p>
+	    <hr align="left" width="85%" size="1.5"/>
+	    <br>
+	    <p>
+	    	<b>
+	    		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	       		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		   		友情提示：
+	    	</b>
+	    	
+	    	<a href="#" title="">百度</a>
+	 		|&nbsp;
+	 		<a href="#" title="" ><b>w3school在线教程</b></a>
+	 		|&nbsp;
+	 		<a href="#" title="" ><b>慕课网</b></a>
+	 	</p>
+	        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="" title="" ><b >回到顶部</b></a>
+		|&nbsp;
+		<a href="" title=""><b >返回首页</b></a>
+		|&nbsp;
+		<a href="" title=""><b >Hbuilder工具下载</b></a>
+		|&nbsp;
+		<a href="" title=""><b >联系我们</b></a>
+		<br><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<img src="img/1.jpg" align="center" />
+	</body>
+</html>

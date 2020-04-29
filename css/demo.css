@@ -1,0 +1,68 @@
+/**?
+ * 页面初始化
+ */
+body{
+	font-family: "微软雅黑";  
+	font-size: 16px;	
+	}
+p{
+	line-height: 1.5;
+	text-indent: 2em;	
+	
+}
+.hui-b{
+	background-color:#F5F5F5;
+	
+}
+.red-q{
+	color: red;
+}
+.green-q{
+	color: green;
+	
+}
+a:link{
+	text-decoration: none;color: #000000;
+}
+a:visited{
+	text-decoration: none;color: blue;
+}
+a:hover{
+	color: #000000;text-decoration: underline;
+}
+a:focus{
+	color: green;
+}
+/*p:first-letter{
+	color: red;font-size: 40px;
+}*/
+/*p::first-line{
+	color: red;
+}
+*/
+th {
+background-color: #4EBEFE;
+color: #ffffff;
+}
+
+tr:nth-child(even){
+background-color: #866AFF;
+}
+
+tr:nth-child(odd){
+background-color: #A779FF;
+}
+
+
+div th {
+background-color: #49638c;
+color: #ffffff;
+} 
+
+div tr:nth-of-type(even){
+background-color: #F3F3F3;
+}
+
+div tr:nth-of-type(odd){
+background-color: #DDDDDD;
+}
